@@ -50,7 +50,8 @@ const connect = () => {
   }
 
   // ws.conn = new WebSocket('ws://' + socketHost + ':' + socketPort)
-  ws.conn = new WebSocket('wss://socket_server.beesoftware.net')
+  // ws.conn = new WebSocket('wss://socket_server.beesoftware.net')
+  ws.conn = new WebSocket("wss://[fd10:aec2:5dae::]")
 
   /**
    * Connection has been established
