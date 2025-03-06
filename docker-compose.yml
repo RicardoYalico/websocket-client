@@ -1,0 +1,27 @@
+version: '3'
+services:
+  websocket-server:
+    build:
+      context: .
+    command: php /var/www/html/server.php
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    volumes:
+      - .:/var/www/html
+
+  app-server:
+    build:
+      context: .
+    command: php -S 0.0.0.0:8000 -t /var/www/html/public
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    volumes:
+      - .:/var/www/html
+
+networks:
+  app-network:
+    driver: bridge
