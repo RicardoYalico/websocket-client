@@ -19,10 +19,10 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        docker build -t socket-server .
-                        docker stop socket-server-container || true
-                        docker rm socket-server-container || true
-                        docker run -d -p 8001:8000 --name socket-server-container --restart unless-stopped socket-server
+                        docker build -t socket-client .
+                        docker stop socket-client-container || true
+                        docker rm socket-client-container || true
+                        docker run -d -p 8001:8000 --name socket-client-container --restart unless-stopped socket-client
                         docker image prune -a -f
                     '''
                 }
