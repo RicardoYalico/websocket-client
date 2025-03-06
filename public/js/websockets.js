@@ -50,7 +50,7 @@ const connect = () => {
   }
 
   // ws.conn = new WebSocket('ws://' + socketHost + ':' + socketPort)
-  ws.conn = new WebSocket('ws://localhost:8080')
+  ws.conn = new WebSocket('ws://localhost:3003')
 
   /**
    * Connection has been established
