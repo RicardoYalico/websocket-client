@@ -13,7 +13,7 @@ COPY . /var/www/html
 WORKDIR /var/www/html
 
 # Exponer los puertos para el servidor WebSocket (8080) y el servidor PHP (8000)
-EXPOSE 8080
+EXPOSE 8000
 
 
 # # Copiar el archivo de inicio al contenedor
