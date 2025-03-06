@@ -21,10 +21,15 @@ const ws = {
  *
  * @param {function} callback - The callback called upon reconnection
  */
-WebSocket.prototype.reconnect = (callback) => {
-  if (this.readyState === WebSocket.OPEN || this.readyState !== WebSocket.CONNECTING) {
-    this.close()
-  }
+// WebSocket.prototype.reconnect = (callback) => {
+//   if (this.readyState === WebSocket.OPEN || this.readyState !== WebSocket.CONNECTING) {
+//     this.close()
+//   }
+
+  WebSocket.prototype.reconnect = (callback) => {
+    if (ws.conn.readyState === WebSocket.OPEN || ws.conn.readyState === WebSocket.CONNECTING) {
+      ws.conn.close()
+    }
 
   let seconds = RECONNECT_IN_SEC
   const container = dom('.connection_alert .error_reconnect_countdown')
