@@ -34,6 +34,17 @@ if (ENABLE_DATABASE == true) {
  * The includes/classes/Chat.php class will
  * handle all the events and database interactions.
  */
+// $server = IoServer::factory(
+//     new HttpServer(
+//         new WsServer(
+//             new Chat($db) /* This class will handle the chats. It is located in includes/classes/Chat.php */
+//         )
+//     ),
+//     WEBSOCKET_SERVER_PORT,
+//     WEBSOCKET_SERVER_IP
+// );
+
+
 $server = IoServer::factory(
     new HttpServer(
         new WsServer(
